@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0</Version>
+    <PackageId>CSoft.CustomerLog</PackageId>
+    <Authors>CSoft</Authors>
+    <Company>CSoft</Company>
+    <Description>自定义日志接口</Description>
+    <PackageReleaseNotes>自定义日志接口</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/caoyiliang/Log</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/caoyiliang/Log</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CSoft.Utils" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>

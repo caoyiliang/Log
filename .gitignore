@@ -1,0 +1,13 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/.vs
+/CustomerLog/bin
+/CustomerLog/obj
+/LoggerWindows/bin
+/LoggerWindows/obj
+/LogInterface/bin
+/LogInterface/obj
+/TestCustomerLog/bin
+/TestCustomerLog/obj
