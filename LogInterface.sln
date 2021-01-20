@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogInterface", "LogInterface\LogInterface.csproj", "{F7142D33-88DA-4A5A-8C48-24079CE37A7C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggerWindows", "LoggerWindows\LoggerWindows.csproj", "{8E896AD8-E2B0-45E1-B2E6-9EDD6DB99DB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggerNLog", "LoggerNLog\LoggerNLog.csproj", "{8E896AD8-E2B0-45E1-B2E6-9EDD6DB99DB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerLog", "CustomerLog\CustomerLog.csproj", "{DD7F32A3-5959-4CDA-9454-2A9A62E142DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerLog", "CustomerLog\CustomerLog.csproj", "{DD7F32A3-5959-4CDA-9454-2A9A62E142DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCustomerLog", "TestCustomerLog\TestCustomerLog.csproj", "{2A745012-592F-47FA-B653-A6417E8FE04F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestCustomerLog", "TestCustomerLog\TestCustomerLog.csproj", "{2A745012-592F-47FA-B653-A6417E8FE04F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

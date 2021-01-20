@@ -1,11 +1,12 @@
 ﻿using LogInterface;
+using NLog.Config;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoggerWindows
+namespace LoggerNLog
 {
     public class NLogFactory : ILogFactory
     {
@@ -18,9 +19,19 @@ namespace LoggerWindows
             _instanceID = InstanceID;
         }
 
-        public NLogFactory():this("Must Have AppID", "Must Have InstanceID")
+        public NLogFactory() : this("Must Have AppID", "Must Have InstanceID")
         {
 
+        }
+
+        public NLogFactory(string logFileName) : this(new XmlLoggingConfiguration(logFileName))
+        {
+
+        }
+
+        public NLogFactory(LoggingConfiguration loggingConfiguration) : this()
+        {
+            NLog.LogManager.Configuration = loggingConfiguration;
         }
 
         public ILogger GetLogger(string loggerName)
