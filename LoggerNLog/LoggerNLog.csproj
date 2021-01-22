@@ -3,13 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>5.0.1</Version>
+    <Version>5.0.2</Version>
     <PackageId>CSoft.LoggerNLog</PackageId>
     <Authors>CSoft</Authors>
     <Description>使用NLog输出日志</Description>
     <PackageReleaseNotes>使用NLog输出日志</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/caoyiliang/Log</RepositoryUrl>
     <PackageProjectUrl>https://github.com/caoyiliang/Log</PackageProjectUrl>
+    <PackageIcon>logo.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,6 +20,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LogInterface\LogInterface.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
