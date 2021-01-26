@@ -15,7 +15,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CSoft.Utils" Version="5.0.1" />
+    <PackageReference Include="CSoft.Utils" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>
