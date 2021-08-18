@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+	<TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>5.0.4</Version>
+    <Version>5.0.5</Version>
     <PackageId>CSoft.LoggerNLog</PackageId>
     <Authors>CSoft</Authors>
     <Description>使用NLog输出日志</Description>
@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="NLog" Version="4.7.9" />
+    <PackageReference Include="NLog" Version="4.7.10" />
   </ItemGroup>
 
   <ItemGroup>
