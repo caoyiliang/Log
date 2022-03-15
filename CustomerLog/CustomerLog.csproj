@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	<TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
+	<TargetFrameworks>netstandard2.0;net5.0;net6.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>5.0.1</Version>
+    <Version>6.0.1</Version>
     <PackageId>CSoft.CustomerLog</PackageId>
     <Authors>CSoft</Authors>
     <Company>CSoft</Company>
@@ -12,10 +12,12 @@
     <RepositoryUrl>https://github.com/caoyiliang/Log</RepositoryUrl>
     <PackageProjectUrl>https://github.com/caoyiliang/Log</PackageProjectUrl>
     <PackageIcon>logo.png</PackageIcon>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<LangVersion>default</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CSoft.Utils" Version="5.0.4" />
+    <PackageReference Include="CSoft.Utils" Version="6.0.1" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LogInterface
+﻿namespace LogInterface
 {
     /// <summary>
     /// 用于获取ILogger对象

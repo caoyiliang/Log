@@ -1,6 +1,4 @@
-using CustomerLog;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Threading.Tasks;
 
 namespace TestCustomerLog
 {

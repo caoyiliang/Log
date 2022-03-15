@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-
-namespace CustomerLog
+﻿namespace CustomerLog
 {
     public interface ICustomerLog
     {
