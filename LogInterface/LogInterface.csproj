@@ -3,7 +3,7 @@
   <PropertyGroup>
 	<TargetFrameworks>netstandard2.0;net5.0;net6.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>6.0.1</Version>
+    <Version>6.0.2</Version>
     <PackageId>CSoft.LogInterface</PackageId>
     <Authors>CSoft</Authors>
     <Description>日志接口</Description>
@@ -13,6 +13,7 @@
     <PackageIcon>logo.png</PackageIcon>
     <ImplicitUsings>enable</ImplicitUsings>
 	<LangVersion>default</LangVersion>
+	<Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>

@@ -3,7 +3,7 @@
   <PropertyGroup>
 	<TargetFrameworks>netstandard2.0;net5.0;net6.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>6.0.1</Version>
+    <Version>6.0.2</Version>
     <PackageId>CSoft.LoggerNLog</PackageId>
     <Authors>CSoft</Authors>
     <Description>使用NLog输出日志</Description>
@@ -13,11 +13,12 @@
     <PackageIcon>logo.png</PackageIcon>
     <ImplicitUsings>enable</ImplicitUsings>
 	<LangVersion>default</LangVersion>
+	<Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="NLog" Version="4.7.14" />
+    <PackageReference Include="NLog" Version="4.7.15" />
   </ItemGroup>
 
   <ItemGroup>

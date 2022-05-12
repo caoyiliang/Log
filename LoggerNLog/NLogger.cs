@@ -33,7 +33,7 @@ namespace LoggerNLog
         public override void Log<T>(LogLevel level, T message)
         {
             NLog.LogLevel nlogLevel = GetNLogLevel(level);
-            NLog.LogEventInfo ei = new NLog.LogEventInfo(nlogLevel, _logger.Name, JsonConvert.SerializeObject(message));
+            var ei = new NLog.LogEventInfo(nlogLevel, _logger.Name, JsonConvert.SerializeObject(message));
             ei.Properties["AppID"] = _appID;
             ei.Properties["InstanceID"] = _instanceID;
             _logger.Log(ei);
@@ -42,8 +42,10 @@ namespace LoggerNLog
         public override void Log<T>(LogLevel level, Exception e, T message)
         {
             NLog.LogLevel nlogLevel = GetNLogLevel(level);
-            NLog.LogEventInfo ei = new NLog.LogEventInfo(nlogLevel, _logger.Name, JsonConvert.SerializeObject(message));
-            ei.Exception = e;
+            var ei = new NLog.LogEventInfo(nlogLevel, _logger.Name, JsonConvert.SerializeObject(message))
+            {
+                Exception = e
+            };
             ei.Properties["AppID"] = _appID;
             ei.Properties["InstanceID"] = _instanceID;
             _logger.Log(ei);
@@ -52,7 +54,7 @@ namespace LoggerNLog
         public override void Log(LogLevel level, string message)
         {
             NLog.LogLevel nlogLevel = GetNLogLevel(level);
-            NLog.LogEventInfo ei = new NLog.LogEventInfo(nlogLevel, _logger.Name, message);
+            var ei = new NLog.LogEventInfo(nlogLevel, _logger.Name, message);
             ei.Properties["AppID"] = _appID;
             ei.Properties["InstanceID"] = _instanceID;
             _logger.Log(ei);
@@ -61,10 +63,12 @@ namespace LoggerNLog
         public override void Log(LogLevel level, Exception e)
         {
             NLog.LogLevel nlogLevel = GetNLogLevel(level);
-            NLog.LogEventInfo ei = new NLog.LogEventInfo();
-            ei.Level = nlogLevel;
-            ei.LoggerName = _logger.Name;
-            ei.Exception = e;
+            var ei = new NLog.LogEventInfo
+            {
+                Level = nlogLevel,
+                LoggerName = _logger.Name,
+                Exception = e
+            };
             ei.Properties["AppID"] = _appID;
             ei.Properties["InstanceID"] = _instanceID;
             _logger.Log(ei);
@@ -72,23 +76,16 @@ namespace LoggerNLog
 
         private static NLog.LogLevel GetNLogLevel(LogLevel level)
         {
-            switch (level)
+            return level switch
             {
-                case LogLevel.Debug:
-                    return NLog.LogLevel.Debug;
-                case LogLevel.Error:
-                    return NLog.LogLevel.Error;
-                case LogLevel.Fatal:
-                    return NLog.LogLevel.Fatal;
-                case LogLevel.Info:
-                    return NLog.LogLevel.Info;
-                case LogLevel.Trace:
-                    return NLog.LogLevel.Trace;
-                case LogLevel.Warn:
-                    return NLog.LogLevel.Warn;
-                default:
-                    throw new ArgumentException("unknown log level: " + level);
-            }
+                LogLevel.Debug => NLog.LogLevel.Debug,
+                LogLevel.Error => NLog.LogLevel.Error,
+                LogLevel.Fatal => NLog.LogLevel.Fatal,
+                LogLevel.Info => NLog.LogLevel.Info,
+                LogLevel.Trace => NLog.LogLevel.Trace,
+                LogLevel.Warn => NLog.LogLevel.Warn,
+                _ => throw new ArgumentException("unknown log level: " + level),
+            };
         }
     }
 }
