@@ -1,4 +1,4 @@
-﻿using Utils.PushQueue;
+﻿using Utils;
 
 namespace CustomerLog
 {
