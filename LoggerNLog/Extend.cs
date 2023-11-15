@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using LogInterface;
 using Microsoft.Extensions.DependencyInjection;
-using System.Text;
-using LogInterface;
 
 namespace LoggerNLog
 {
     public static class Extend
     {
-        public static IServiceCollection UseNLog(this IServiceCollection services) => services.AddSingleton<ILogFactory, NLogFactory>();
+        public static IServiceCollection AddNLog(this IServiceCollection services) => services.AddSingleton<ILogFactory, NLogFactory>();
     }
 }
