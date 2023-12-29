@@ -1,5 +1,5 @@
 ﻿using LogInterface;
-using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace LoggerNLog
 {
@@ -33,7 +33,7 @@ namespace LoggerNLog
         public override void Log<T>(LogLevel level, T message)
         {
             NLog.LogLevel nlogLevel = GetNLogLevel(level);
-            var ei = new NLog.LogEventInfo(nlogLevel, _logger.Name, JsonConvert.SerializeObject(message));
+            var ei = new NLog.LogEventInfo(nlogLevel, _logger.Name, JsonSerializer.Serialize(message));
             ei.Properties["AppID"] = _appID;
             ei.Properties["InstanceID"] = _instanceID;
             _logger.Log(ei);
@@ -42,7 +42,7 @@ namespace LoggerNLog
         public override void Log<T>(LogLevel level, Exception e, T message)
         {
             NLog.LogLevel nlogLevel = GetNLogLevel(level);
-            var ei = new NLog.LogEventInfo(nlogLevel, _logger.Name, JsonConvert.SerializeObject(message))
+            var ei = new NLog.LogEventInfo(nlogLevel, _logger.Name, JsonSerializer.Serialize(message))
             {
                 Exception = e
             };
