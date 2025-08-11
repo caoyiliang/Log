@@ -26,19 +26,13 @@ namespace CustomerLog
             await Task.CompletedTask;
         }
 
-        private string AddTime(string msg)
-        {
-            return $"{DateTime.Now:yyyy/MM/dd HH:mm:ss:fff}    {msg}{Environment.NewLine}";
-        }
+        private string AddTime(string msg) => $"{DateTime.Now:yyyy/MM/dd HH:mm:ss:fff}    {msg}{Environment.NewLine}";
 
-        public void Write(string directoryName, string content)
+        public async Task Write(string directoryName, string content) => await _pushQueue.PutInDataAsync(new DirectoryNameAndContent()
         {
-            _pushQueue.PutInData(new DirectoryNameAndContent()
-            {
-                DirectoryName = directoryName,
-                Content = AddTime(content),
-            });
-        }
+            DirectoryName = directoryName,
+            Content = AddTime(content),
+        });
     }
     internal class DirectoryNameAndContent
     {
