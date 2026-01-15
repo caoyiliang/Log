@@ -1,5 +1,6 @@
 ﻿using LogInterface;
 using System.Text.Json;
+using System.Text.Encodings.Web;
 
 namespace LoggerNLog
 {
@@ -10,6 +11,11 @@ namespace LoggerNLog
         private readonly string _instanceID;
 
         private readonly NLog.Logger _logger;
+
+        private static readonly JsonSerializerOptions _jsonOptions = new JsonSerializerOptions
+        {
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+        };
 
         public NLogger(string AppID, string InstanceID, NLog.Logger logger)
         {
@@ -33,7 +39,7 @@ namespace LoggerNLog
         public override void Log<T>(LogLevel level, T message)
         {
             NLog.LogLevel nlogLevel = GetNLogLevel(level);
-            var ei = new NLog.LogEventInfo(nlogLevel, _logger.Name, JsonSerializer.Serialize(message));
+            var ei = new NLog.LogEventInfo(nlogLevel, _logger.Name, JsonSerializer.Serialize(message, _jsonOptions));
             ei.Properties["AppID"] = _appID;
             ei.Properties["InstanceID"] = _instanceID;
             _logger.Log(ei);
@@ -42,7 +48,7 @@ namespace LoggerNLog
         public override void Log<T>(LogLevel level, Exception e, T message)
         {
             NLog.LogLevel nlogLevel = GetNLogLevel(level);
-            var ei = new NLog.LogEventInfo(nlogLevel, _logger.Name, JsonSerializer.Serialize(message))
+            var ei = new NLog.LogEventInfo(nlogLevel, _logger.Name, JsonSerializer.Serialize(message, _jsonOptions))
             {
                 Exception = e
             };
